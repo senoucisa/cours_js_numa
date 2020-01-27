@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Entrainement JS</title>
+    <style>
+        
+    </style>
+   
+</head>
+<body>
+    <!-- contenu HTML -->
+    <script>
+        //commentaire pour la ligne
+        /*
+            ENTRAINEMENT:
+                    --1--       COMMENTAIRES,SYNTAXE
+                    --2--       AFFICHAGES
+                    --3--       variables
+                    --4--       TYPES DE DONNEES
+                    --5--       CONSTANTES
+                    --6--       CONCATENATION      
+        */
+        /*
+        -------------------------------------------------
+        ----------1 COMMENTAIRES,SYNTAXE ----------------
+        -------------------------------------------------
+        */
+            document.write('<h1> Entrainement Javascript</h1>');
+            document.write('<h2> 1- COMMENTAIRES,SYNTAXE</H2><p>Voir code source</p>');
+            //Toutes les instructions JAVASCRIPT se finissent par un ";"
+            //J'effectue un commentaire de ligne avec double slash (//)
+            /*
+            commentaire
+            sur
+            plusieurs lignes slash-etoile/etoile-slash
+            */
+           
+            // ---------------------------------------------
+            document.write('<h2> 2- AFFICHAGE</H2>');
+            // --------------2 AFFICHAGE--------------------
+             /*---------------------------------------------
+            */
+            // document.write('Mon premier message');
+           
+            console.info ('Informations à envoyer dans la console');
+            console.log('la meme chose que info petite icone en moins');
+
+            //boites de dialogue
+            //boite alerte
+            // alert('Ceci est un message alert');
+            //confirm
+            // confirm('Confirmez vous?');
+            //prompt permet de récuperer une donnée de l'utilisateur
+            // prompt('Quel est votre age?');
+                
+            // */
+            // ------------------------------------------------------
+            // ----------------------3 variables---------------------
+            // ------------------------------------------------------
+            // */
+        
+            document.write('<h2> 3- VARIABLES </H2>');
+
+              //Une variable est une 'boite virtuelle'dans laquelle nous allons stocker une donnée.Cette donée peut-etre de différents types;comme des mots,des chiffres ou autres (voir chapitre sur les types de données).
+              //Le mot cle "var"permet de déclarer une variable nommée "maBoite":
+              //caracteres acceptés:de 0 à 9,de A à Z,de a à z,+ $_ mais jamias comme premier ou dernier caractére
+
+              //Une variable est une boite virtuelle dans laquelle nous allons stocker une donnée.Cette donnée peut-etre de differents types,comme des mots,des chiffres ou autres (voir chapitre sur les types données)
+            var maBoite;
+              //Ensuite nous lui affectons une valeur:AFFECTATION
+            maBoite=10;
+            document.write(maBoite);
+
+            //Affectation de la valeur via un prompt rempli par l'utilisateur.
+            //Exemple de déclaration et d'affectation dans la meme instruction.
+            var sonAge= prompt('Quel est votre age?');
+            document.write(sonAge);
+
+              //Possibilité  de declarer un ensemble de variables.
+            var prenom ='Sylvie',nom='Dupont',genre ='Feminin';
+            prenom ='Martine';
+            console.log('prenom :'+prenom );
+            prenom ='Robert';
+            console.log('prenom :'+prenom );
+            console.log(nom);
+            console.log(genre);
+            document.write('<br>' +prenom +'<br>');
+            document.write(nom);
+            
+
+            var fruits ='pomme ';
+            console.log(fruits);
+
+            //contrairement au = d'affectation qui remplace la valeur de la variable,j'utulise ici +=
+            //qui va ajouter à la valeur de la variable
+            fruits+=' fraise ';
+            console.log(fruits);
+            fruits+=' mangue ';
+            console.log(fruits);
+
+            var note_eval = 12;
+            console.log(note_eval);
+            note_eval +=2;
+            console.log(note_eval);
+            //je peux garder une variable sans definir son contenu,mais si je fais appel à elle ,elle sera ubdefined
+
+            var quelqueChose;
+            console.log(quelqueChose);
+            //Si je fais appelle a une variable qui n'a pas été déclarée,j'aurai un méssage d'erreur(not defined)c'est à éviter
+            // console.loge('autreChose'); 
+
+            // je peux declarer une variable avec le mot clef'let'(variable let)
+
+            let maNouvelleVariable;
+            console.log(maNouvelleVariable);
+
+            // je peux déclarer de maniere globale (sans mot clef ni var,ni let) mais je dois lui confere une valeur:variable globale
+
+            maTroisiemeVariable ='test';
+            console.log(maTroisiemeVariable);
+
+            /*
+            ----------------------------------------------------------
+            -----------------4 TYPES DE DONNEES-----------------------
+            -----------------------------------------------------------
+            */
+            document.write('<h2> 4-TYPES DE DONNEES</h2>');
+
+            // Les trois principaux types de données (appelés primitif)sont les sting (chaine de caracteres)/number(donnees numeriques)/booléen ( données booléennes true or false)
+            // string:
+            var monTexte="Voici une phrase écrite dans un double quote";
+            // L'antislash permet d'echapper un caractere dans le string (alt gr et 8).
+            var monTexte2='Voici une phrase écrite dans un simple quote aujourd\'hui<br>';
+            console.log(monTexte2);
+            document.write(monTexte2);
+            var monTexte3 = '55';
+
+            // TYPE NUMBER
+            // affectation se fait sans quote
+            var chiffre =55;  
+            console.log(chiffre);
+            // tous les types d'ecritures numériques sont possible
+            var negatif = -10;
+            var decimal= 5.5;
+
+            // TYPE BOOLEEN: il ne prend que deux valeurs TRUE ou FALSE
+            var choix= true;
+            console.log(choix);
+
+            // Typeof permet de verifier le type d'une variable
+
+            document.write(typeof(monTexte)+'<br>');
+            document.write(typeof(chiffre)+'<br>');
+            document.write(typeof(choix)+'<br>');
+
+            var monChiffre = '50';
+            var monChiffre2 = '20';
+            console.log(monChiffre+monChiffre2);
+            console.log(typeof(monChiffre));
+
+            var ageUtilisateur =prompt('Quel est votre age ?');
+            console.log(typeof(ageUtilisateur));
+
+            /*------------------------------------------------------------
+            --------------5 CONSTANTES------------------------------------
+            --------------------------------------------------------------
+            */
+
+            document.write('<h2> 5-CONTANTES</h2>');
+
+            // Les constantes ne sont jamais destinées a varier ,elles sont déclaréées par le mot clé const et par convention nous les nommerons tout en majuscule,afin de les differencier des variables 
+            const BOUGE_PAS ='ma constante impossible à modifier';
+            document.write(BOUGE_PAS+'<br>');
+            // const BOUGE_PAS ='nouveau contenu'; induira des messages d'erreur que d'essayer de redefinir une constante
+
+             /*------------------------------------------------------------
+            --------------5 CONCATENATION-----------------------------------
+            --------------------------------------------------------------
+            */
+            document.write('<h2> 6-CONCATANATION</h2>');
+            // nous concatenons les string avec le symbole +
+
+            var prenom= 'Bruce', nom= 'Wayne';
+            // ecrire dans le document "Bruce Wayne"
+            document.write(prenom+' ' +nom +'<br>');
+            document.write('<strong>' + prenom + '</strong> ' + nom);
+
+            // realiser un prompt demandans son age à l'utilisateur,recuperer cette donnée et l'utiliser pour afficher :Vous avez xx ans!
+
+            var ageDemander = prompt('Quel age avez vous svp?');
+            // console.log(ageDemander);
+            document.write('<br>  vous avez '+ ageDemander + ' ans ' );
+
+
+    </script>
+    
+</body>
+</html>
