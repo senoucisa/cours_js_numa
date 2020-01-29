@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Selecteurs Javascript</title>
+</head>
+<body>
+    
+<h2 id="titre">Mon titre de niveau 2</h2>
+
+<div class="avion">AirBus 1</div>
+<div class="avion">AirBus 2</div>
+<div class="avion">AirBus 3</div>
+
+<p id="first">Paragraphe 1</p>
+<p>Paragraphe 2 </p>
+<p title="Infobulle">paragraphe 3</p>
+<p>paragraphe4</p>
+<p>paragraphe5</p>
+
+<h2>mon titre de fin</h2>
+
+<script>
+    // SELECTION NATURELLE D'UN ID
+
+    var monId= titre;
+    console.log(monId);
+
+    // SELECTION BY ID
+
+    var monId2 = document.getElementById('titre');
+    console.log(monId2);
+    
+
+    // SELECTION BY CLASSNAME
+    
+    var mesClasses = document.getElementsByClassName('avion');
+    // je recupere un ensemble:une collection html
+  
+    console.log(mesClasses);
+    // je peux atteindre un des elements de la collection grace à l'indice [1]
+
+    console.log(mesClasses[1]);
+    // innerHTML definit le contenu de la balise
+    console.log(mesClasses[1] .innerHTML);
+    mesClasses[1].innerHTML = 'nouveau contenu';
+    mesClasses[1].style.color = 'blue';
+    // modifier le contenu du h2 pour marquer 'nouveau titre'
+    // fin de mon window.onload ne pas effacer.
+
+    // monId.innerHTML = 'paragraphe';
+
+
+
+
+    //             EXERCICE
+    // var maVar3 = document.getElementById('titre');
+    // console.log(maVar3);
+    // maVar3.innerHTML = 'Paragraphe';
+
+
+    // SELECTION BY TAGNAME
+
+    var mesP = document.getElementsByTagName('p');
+    console.log(mesP);
+    console.log(mesP[1].innerHTML);
+
+    for (var i=0; i < mesP.length; i++){
+        document.write(mesP[i].innerHTML);
+        mesP[i].style.color = 'red';
+    }
+
+    // Liste des mots clés à appliquer avec .style voici le lien du site ci-dessus
+
+    // https://www.w3schools.com/jsref/dom_obj_style.asp
+
+
+    // querySelector
+
+    var query = document.querySelector('#titre');
+    console.log(query);
+
+    var query2 = document.querySelectorAll('.avion');
+    console.log(query2[2]);
+
+
+    var query3 = document.querySelectorAll('div.avion');
+
+    query3[2].innerHTML = 'mon airbus';
+   
+    query3[2].style.backgroundColor = 'blue';
+    query3[2].style.color = 'white';
+    query3[2].style.fontWeight = 'bold';
+    
+
+
+
+</script>
+
+</body>
+
+</html>
