@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Evenements Javascript</title>
+    <style>
+        #div1{background: purple; color: #fff; padding: 10px;}
+
+
+    </style>
+   
+</head>
+<body>
+    <h2>Click</h2>
+    <div id="div1">DIV1</div>
+
+    <script>
+        // Le addEventListener à besoin de deux arguments:1- le mot clé correspondant a l'évenement(ici le click)et 2- La fonction executée lors de l'evenement (ici la fonction fDiv1).
+        document.querySelector('#div1').addEventListener('click,fDiv1')
+    </script>
+    
+</body>
+
+</html>

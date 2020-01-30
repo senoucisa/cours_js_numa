@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Evenements Javascript</title>
+    <style>
+        #div1{
+            background: purple;
+             color: #fff;
+              padding: 10px;
+        }
+        #div2{
+            background: cyan;
+             color: #000; 
+             padding: 10px;
+        }
+        #parag{
+            background: pink;
+             color: #000;
+              padding: 10px;
+        }
+        #div3{
+            background: dodgerblue; 
+            color: #fff;
+             padding: 10px;
+             width: 70%;
+        }
+        #div4{
+            background: saddlebrown;
+            color: seashell;
+            padding: 10px;
+        }
+        #prenom{
+        width: 50px;
+        }
+        .clicBouton{
+            background: red;
+             color: #fff;
+              width: 70px;
+        }
+
+        
+
+
+    </style>
+   
+</head>
+<body>
+    <h2 onclick="fDiv1();">Click</h2>
+    <div id="div1">DIV1</div>
+    <p id="parag">Paragraphe à cliquer</p>
+    <h2>DblClick</h2>
+    <div id="div2">DIV2</div>
+    <h2>Survol (mouseover mouseout)</h2>
+    <div id="div3">DIV3</div>
+    <div id="div4">DIV4</div>
+    <h2>Focus</h2>
+    <form>
+        <label for="prenom">Veuillez saisir votre prénom</label>
+        <input id="prenom" type="text" name="prenom">
+        <input type="submit" name="submit" id="submit" value="OK">
+    </form>
+
+
+    <script>
+        // Le addEventListener à besoin de deux arguments:1- le mot clé correspondant a l'évenement(ici le click)et 2- La fonction executée lors de l'evenement (ici la fonction fDiv1).
+
+
+
+        // Sue ce paragraphe plutot qu'appeler une fonction existante nous executons une fonction anonyme au moment du clic
+        document.querySelector('#parag').addEventListener('click',function(){alert('par fonction anonyme');});
+
+
+
+
+
+        document.querySelector('#div1').addEventListener('click',function(){alert('par fonction anonyme');});
+
+        function fDiv1(){alert('Div1 est cliquée !');}
+
+
+
+        var maDiv2 = document.getElementById('div2');
+        maDiv2.addEventListener('dblclick', fDiv2);
+
+
+        // document.getElementById('div2').addEventListener('dblclick',fDiv2); (2eme version de facon de faire) 
+
+        function fDiv2(){alert('Div2 est double cliquée !');}
+
+
+
+        document.querySelector('#div3').addEventListener('mouseover',fDiv4);
+        function fDiv3(){
+            this.innerHTML =('Div3 survolé');
+            this.style.fontSize = '24px';
+        }
+
+        document.querySelector('#div3').addEventListener('mouseout',fDiv4);
+        function fDiv4(){
+            // THIS est un mot clé (signifiant l'élément lui meme)qui permet de faire refernce a l'élément précedemment selectionné,l'élément concerné par la fonction
+            this.innerHTML ='Div3 plus survolé';
+            this.style.fontSize = '16px'
+        }
+
+
+        document.querySelector('#div1').addEventListener('click',fDiv1);
+        function fDiv1() {
+           alert('Element cliqué !')
+            
+        }
+
+        document.querySelector('#prenom').addEventListener('focus',inputFocus);
+
+       function inputFocus(){
+            //  alert('champ focus');
+            this.style.width ="250px";
+       }
+       document.querySelector('#prenom').addEventListener('blur',inputBlur);
+
+       function inputBlur(){
+            //   alert('champ blur');
+            this.style.width ="50px";
+        }
+
+        document.querySelector('#submit').addEventListener('click', inputSubmit);
+        function inputSubmit(event){
+            event.preventDefault();
+            // alert('Formulaire validé');
+            // document.querySelector('#prenom')
+            this.classList.add('clicBouton');
+            console.log(document.querySelector('#prenom').value);
+        }
+
+
+
+
+
+    </script>
+    
+</body>
+
+</html>
